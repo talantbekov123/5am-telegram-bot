@@ -62,6 +62,18 @@
                     });
                 }
             }
+        } else if(hours == 7 && minutes == 15) {
+            for(let chat of chats) {
+                if(chat.isOpenToQuestion) {
+                    await db.Chat.findOneAndUpdate({ chatId: chat.chatId, isOpenToQuestion: false }, {});
+                    let randomInt = getRandomInt(19);
+                    // get random and ask questions
+                    bot.sendMessage(chat.chatId, questions[randomInt] + `\n\n${axilary}`).catch((error) => {
+                        console.log(error.code);
+                        console.log(error.response.body);
+                    });
+                }
+            }
         } else {
             for(let chat of chats) {
                 await db.Chat.findOneAndUpdate({ chatId: chat.chatId, isOpenToQuestion: true }, {});
