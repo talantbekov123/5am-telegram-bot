@@ -48,6 +48,8 @@
         let minutes = datetime.getMinutes();
 
         const chats = await db.Chat.find({});
+        
+        console.log(hours, minutes);
 
         if(hours == 5 && minutes == 30) {
 
