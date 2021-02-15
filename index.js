@@ -95,7 +95,7 @@
         const from = msg.from;
 
         if (message.toLocaleLowerCase() == 'start') {
-            await db.Chat.findOneAndUpdate({}, { chatId, from, isOpenToQuestion: true }, { upsert: true });
+            await db.Chat.findOneAndUpdate({ chatId }, { from, isOpenToQuestion: true }, { upsert: true });
             bot.sendMessage(chatId, 'Вы сохранены в базе');
         } else if (message.toLocaleLowerCase() == 'end') {
             await db.Chat.remove({ chatId });
