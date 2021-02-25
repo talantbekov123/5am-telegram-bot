@@ -43,9 +43,11 @@ app.get('/', async (req, res) => {
 
       obj.time.push(axilary);
     }
-
+    obj.time.pop();
+    
     result.push(obj);
   }
+
 
   let data = `{ "data": ${JSON.stringify(result)}}`;
   await fs.writeFileSync('botFile.json', data);
