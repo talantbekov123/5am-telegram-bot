@@ -51,7 +51,7 @@
 
         console.log(hours, minutes);
 
-        if (hours == 3 && minutes == 21) {
+        if (hours == 5 && minutes == 30) {
 
             for (let chat of chats) {
                 if (chat.isOpenToQuestion) {
