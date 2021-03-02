@@ -21,6 +21,7 @@ app.get('/', async (req, res) => {
 
     let obj = {
       name,
+      chatId: chat.chatId,
       time: []
     }
 
