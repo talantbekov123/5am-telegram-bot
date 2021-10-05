@@ -2,7 +2,7 @@
     const TelegramBot = require('node-telegram-bot-api');
 
     // replace the value below with the Telegram token you receive from @BotFather
-    const token = '1625857880:AAFgp0X34mJYcdzvJvHbTnp-oZzPv-peplY';
+    const token = '2093085916:AAHW6ieqHLInWyV7yZVkbfiE2372ezmrQA8';
 
     // Create a bot that uses 'polling' to fetch new updates
     const bot = new TelegramBot(token, { polling: true });
@@ -51,7 +51,7 @@
 
         console.log(hours, minutes);
 
-        if (hours == 5 && minutes == 30) {
+        if (hours == 7 && minutes == 30) {
 
             for (let chat of chats) {
                 if (chat.isOpenToQuestion) {
@@ -64,7 +64,7 @@
                     });
                 }
             }
-        } else if (hours == 6 && minutes == 15) {
+        } else if (hours == 8 && minutes == 15) {
             for (let chat of chats) {
                 if (chat.isOpenToQuestion) {
                     await db.Chat.findOneAndUpdate({ chatId: chat.chatId }, { isOpenToQuestion: false });
